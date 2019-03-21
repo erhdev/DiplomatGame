@@ -1,0 +1,10 @@
+img {
+    height: 100%;
+    width: 100%;
+}
+#charDisplay {
+    display: none;
+}
+.col-4 {
+    margin: 0;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="Assets/CSS/style.css">
+
+  <title>Negotiations</title>
+
+</head>
+
+<body>
+  <div class="charSelectScreen">
+    <div class="row">
+      <div class=col-4>
+
+        <div class="card char" style="width: 18rem;">
+          <img src="Assets/Media/Images/Bismarck.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 id="00-name"></h5>
+            <p id="00-bio"></p>
+            <ul id="00-stats">
+              <li id="00-hp"></li>
+              <li id="00-atk"></li>
+              <li id="00-catk"></li>
+            </ul>
+
+          </div>
+          <button class="char enemy" id="00-char">Select</button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card char" id="01-card" style="width: 18rem;">
+          <img src="Assets/Media/Images/Metternich.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 id="01-name"></h5>
+            <p id="01-bio"></p>
+            <ul id="01-stats">
+              <li id="01-hp"></li>
+              <li id="01-atk"></li>
+              <li id="01-catk"></li>
+            </ul>
+          </div>
+          <button class="char enemy" id="01-char">Select</button>
+        </div>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+    <div class="row"></div>
+    <div class="row" id="charDisplay">
+      <div class="col-4"><img id="charDisplayImg" src=""></div>
+      <div class="col-4">
+        <ul>
+          <li>Tenacity: <span id="charDisplayHP"></span></li>
+          <li>Persuasion: <span id="charDisplayATK"></span></li>
+        </ul>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="Assets/JavaScript/javascript.js"></script>
+</body>
+
+</html>
