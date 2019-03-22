@@ -16,44 +16,55 @@
 </head>
 
 <body>
-  <div class="charSelectScreen">
-    <div class="row">
+  <div class="gameScreen">
+    <div class="row justify-content-center">
       <div class=col-4>
-
-        <div class="card char" style="width: 18rem;">
+        <div class="card char" id="bismarck" style="width: 18rem;">
           <img src="Assets/Media/Images/Bismarck.jpg" class="card-img-top">
           <div class="card-body">
-            <h5 id="00-name"></h5>
-            <p id="00-bio"></p>
-            <ul id="00-stats">
-              <li id="00-hp"></li>
-              <li id="00-atk"></li>
-              <li id="00-catk"></li>
+            <h5 class="name"></h5>
+            <p class="bio"></p>
+            <ul class="stats">
+              <li class="hp"></li>
+              <li class="atk"></li>
+              <li class="catk"></li>
             </ul>
-
           </div>
-          <button class="char enemy" id="00-char">Select</button>
+          <button class="char" id="00-char">Select</button>
         </div>
       </div>
       <div class="col-4">
-        <div class="card char" id="01-card" style="width: 18rem;">
+        <div class="card char" id="metternich" style="width: 18rem;">
           <img src="Assets/Media/Images/Metternich.jpg" class="card-img-top">
           <div class="card-body">
-            <h5 id="01-name"></h5>
-            <p id="01-bio"></p>
-            <ul id="01-stats">
-              <li id="01-hp"></li>
-              <li id="01-atk"></li>
-              <li id="01-catk"></li>
+            <h5 class="name"></h5>
+            <p class="bio"></p>
+            <ul class="stats">
+              <li class="hp"></li>
+              <li class="atk"></li>
+              <li class="catk"></li>
             </ul>
           </div>
-          <button class="char enemy" id="01-char">Select</button>
+          <button class="char" id="01-char">Select</button>
         </div>
       </div>
       <div class="col-4">
+        <div class="card char" id="talleyrand" style="width: 18rem;">
+          <img src="Assets/Media/Images/Talleyrand.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="name"></h5>
+            <p class="bio"></p>
+            <ul class="stats">
+              <li class="hp"></li>
+              <li class="atk"></li>
+              <li class="catk"></li>
+            </ul>
+          </div>
+          <button class="char" id="02-char">Select</button>
+        </div>
       </div>
     </div>
-    <div class="row"></div>
+    <div class="row justify-content-center"></div>
     <div class="row" id="charDisplay">
       <div class="col-4"><img id="charDisplayImg" src=""></div>
       <div class="col-4">
@@ -65,9 +76,12 @@
       <div class="col-4"></div>
     </div>
   </div>
+  <container id="playerVictory"></container>
+  <container id="playerDefeat"></container>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="Assets/JavaScript/javascript.js"></script>
+  <script src="Assets/JavaScript/functions.js"></script>
+  <script src="Assets/JavaScript/execution.js"></script>
 </body>
 
 </html>
