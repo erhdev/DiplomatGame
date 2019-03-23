@@ -7,6 +7,5 @@ $(document).ready(function () {
         } else if ($(event.target).is('.enemy')) {
         enemySelect();
         }
-      })  
-     
+      })      
 });

@@ -1,40 +1,53 @@
 var selectedChar = {};
 var selectedEnem = {};
 var selectedCard;
-var enemiesDefeated = 0;
 // put the cards in an array??
 var charArray = [
 char0 = {
-    name:"Otto Von Bismarck",
-    hp: 30,
+    name:"The General",
+    fullname: "General Bismacht of Hallenland",
+    hp: 40,
     attack: 3,
-    counterAttack: 3,
+    counterAttack: 4,
 
 },
 char1 = {
-    name: "Klemens Von Metternich",
-    hp: 15,
-    attack: 5,
+    name: "The Chancellor",
+    fullname: "Chancellor Demena of Carthia",
+    hp: 35,
+    attack: 4,
     counterAttack: 5,
 },
 char2 =  {
-    name: "Talleyrand",
-    hp: 24,
-    attack: 4,
-    counterAttack: 4,
+    name: "The Prince",
+    fullname: "His Lordship Prince Henrius of Aquitance",
+    hp: 25,
+    attack: 6,
+    counterAttack: 3,
+},
+char3 = {
+    name: "The Revolutionary",
+    fullname: "Comrade Anna of the United Kielchek Republics",
+    hp: 30,
+    attack: 5,
+    counterAttack: 7,
 }
 ];
-
-var cardArray = [$('#bismarck'), $('#metternich'), $('#talleyrand')];
+var enemies = 4;
+var cardArray = [$('#general'), $('#chancellor'), $('#prince'), $('#revolutionary')];
 
 function infoUpdate() {
     for (i = 0; i < cardArray.length; i++) {
         cardArray[i].find('.name')
         .text(charArray[i].name);
+        cardArray[i].find('.fullname')
+        .text(charArray[i].fullname);
         cardArray[i].find('.hp')
         .text("Tenacity: " + charArray[i].hp);
         cardArray[i].find('.atk')
         .text("Persuasion: " + charArray[i].attack);
+        cardArray[i].find('.catk')
+        .text("Stubborness: " + charArray[i].counterAttack);
     }   
 }
 function charSelect() {
@@ -50,6 +63,11 @@ function charSelect() {
         selectedChar = char2;
         console.log(selectedChar);
     }
+    if ($(event.target).is('#03-char')) {
+        selectedChar = char3;
+        console.log(selectedChar);
+    }
+    enemies--;
     selectedCard = $(event.target).parent().parent();
     charSelectDOMStuff();
     console.log(selectedCard);
@@ -74,9 +92,13 @@ function enemySelect() {
 function charSelectDOMStuff() {
     
     infoUpdate();
-    selectedCard.slideUp(2000);
+    selectedCard.fadeOut(1000);
+    $('.name').fadeOut(1000);
+    $('.fullname').fadeIn(1000);
+    $('.atk').fadeOut(1000);
+    $('.catk').fadeIn(1000);
     $('.char').addClass('enemy').removeClass("char");
-    $('#charDisplay').slideDown(2000);
+    $('#charDisplay').fadeIn(1000);
     selectedImg = $(event.target).siblings('.card-img-top').attr('src');
     $('#charDisplayImg').attr("src" , selectedImg);
     $('#charDisplayHP').text(selectedChar.hp);
@@ -105,7 +127,7 @@ function attack() {
     selectedChar.hp = selectedChar.hp - selectedEnem.counterAttack;
    
     // user atk increases
-    selectedChar.attack = Math.floor(selectedChar.attack * 1.5);
+    selectedChar.attack = Math.floor(selectedChar.attack * 2);
 
     // detect if enemy hp = 0, if so execute enemyDefeat function
 
@@ -113,19 +135,39 @@ function attack() {
     // additional info display I can't put in infoUpdate
     $('#charDisplayHP').text(selectedChar.hp);
     $('#charDisplayATK').text(selectedChar.attack);
-    if (selectedEnem.hp === 0) {
+    if (selectedEnem.hp <= 0) {
         enemyDefeat();
-    }
-    // detect if user hp = 0, if so execute playerDefeat function
-    if (selectedChar.hp === 0) {
-
+    } else if (selectedChar.hp <= 0) {
+        playerDefeat();
     }
     
 }
-
 function enemyDefeat() {
-    // enemiesDefeated var++
+    $('#attack').remove();
+    enemies--;
     // enemy card no longer displays on screen
+    selectedCard.fadeOut(2000);
+    selectedCard.parent().fadeOut(2000);
     // return to enemy select screen
+    $('.enemy').fadeIn(3000);
     // detect if enemies defeated = 5, if so reveal playerVictory elements and hide all else
+    if (enemies === 0) {
+        playerVictory();
+    }
+}
+
+function playerDefeat() {
+    $('.gameScreen').fadeOut(1000);
+    $('#playerDefeat').fadeIn(2000);
+    $('#tryAgain').click(function () {
+        location.reload();
+    });
+}
+
+function playerVictory() {
+    $('.gameScreen').fadeOut(1000);
+    $('#playerVictory').fadeIn(2000);
+    $('#playAgain').click(function () {
+        location.reload();
+    });
 }

@@ -18,66 +18,83 @@
 <body>
   <div class="gameScreen">
     <div class="row justify-content-center">
-      <div class=col-4>
-        <div class="card char" id="bismarck" style="width: 18rem;">
-          <img src="Assets/Media/Images/Bismarck.jpg" class="card-img-top">
+
+      <div class="col-3">
+        <div class="card text-center char" id="general" style="width: 18rem;">
+          <img src="Assets/Media/Images/General.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="name"></h5>
-            <p class="bio"></p>
-            <ul class="stats">
-              <li class="hp"></li>
-              <li class="atk"></li>
-              <li class="catk"></li>
-            </ul>
+            <h5 class="fullname"></h5>
+            <h6 class="hp"></h6>
+            <h6 class="atk"></h6>
+            <h6 class="catk"></h6>
           </div>
           <button class="char" id="00-char">Select</button>
         </div>
       </div>
-      <div class="col-4">
-        <div class="card char" id="metternich" style="width: 18rem;">
-          <img src="Assets/Media/Images/Metternich.jpg" class="card-img-top">
+      <div class="col-3">
+        <div class="card text-center char" id="chancellor" style="width: 18rem;">
+          <img src="Assets/Media/Images/Businesswoman (1).jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="name"></h5>
-            <p class="bio"></p>
-            <ul class="stats">
-              <li class="hp"></li>
-              <li class="atk"></li>
-              <li class="catk"></li>
-            </ul>
+            <h5 class="fullname"></h5>
+            <h6 class="hp"></h6>
+            <h6 class="atk"></h6>
+            <h6 class="catk"></h6>
           </div>
           <button class="char" id="01-char">Select</button>
         </div>
       </div>
-      <div class="col-4">
-        <div class="card char" id="talleyrand" style="width: 18rem;">
-          <img src="Assets/Media/Images/Talleyrand.jpg" class="card-img-top">
+      <div class="col-3">
+        <div class="card text-center char" id="prince" style="width: 18rem;">
+          <img src="Assets/Media/Images/Prince (1).jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="name"></h5>
-            <p class="bio"></p>
-            <ul class="stats">
-              <li class="hp"></li>
-              <li class="atk"></li>
-              <li class="catk"></li>
-            </ul>
+            <h5 class="fullname"></h5>
+            <h6 class="hp"></h6>
+            <h6 class="atk"></h6>
+            <h6 class="catk"></h6>
           </div>
           <button class="char" id="02-char">Select</button>
         </div>
       </div>
-    </div>
-    <div class="row justify-content-center"></div>
-    <div class="row" id="charDisplay">
-      <div class="col-4"><img id="charDisplayImg" src=""></div>
-      <div class="col-4">
-        <ul>
-          <li>Tenacity: <span id="charDisplayHP"></span></li>
-          <li>Persuasion: <span id="charDisplayATK"></span></li>
-        </ul>
+      <div class="col-3">
+        <div class="card text-center char" id="revolutionary" style="width: 18rem;">
+          <img src="Assets/Media/Images/Revolutionary.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="name"></h5>
+            <h5 class="fullname"></h5>
+            <h6 class="hp"></h6>
+            <h6 class="atk"></h6>
+            <h6 class="catk"></h6>
+          </div>
+          <button class="char" id="03-char">Select</button>
+        </div>
       </div>
-      <div class="col-4"></div>
+    </div>
+    <div class="row rowThird" id="charDisplay">
+      <div class="col-6"><img id="charDisplayImg" src=""></div>
+      <div class="col-6" id="charStats">
+
+        <p>Tenacity: <span id="charDisplayHP"></span></p>
+        <p>Persuasion: <span id="charDisplayATK"></span></p>
+
+      </div>
     </div>
   </div>
-  <container id="playerVictory"></container>
-  <container id="playerDefeat"></container>
+  <div id="playerVictory">
+    <div class="row rowThird"></div>
+    <h2 id="success">You are victorious!</h2>
+    <p>Your country will be spared and will exist alongside the large powers.</p>
+    <p>You will be hailed as a hero by your countrymen.</p>
+    <button id="playAgain">Play Again</button>
+  </div>
+  <div id="playerDefeat">
+    <div class="row rowThird"></div>
+    <h2 id="failure">You have failed.</h2>
+    <p>Your country will be divided among the large powers, and you will be cursed as a traitor by your fellows.</p>
+    <button id="tryAgain">Try Again</button>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="Assets/JavaScript/functions.js"></script>
