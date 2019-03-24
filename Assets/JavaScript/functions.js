@@ -9,7 +9,6 @@ char0 = {
     hp: 40,
     attack: 3,
     counterAttack: 4,
-
 },
 char1 = {
     name: "The Chancellor",
@@ -103,18 +102,22 @@ function charSelectDOMStuff() {
     $('#charDisplayImg').attr("src" , selectedImg);
     $('#charDisplayHP').text(selectedChar.hp);
     $('#charDisplayATK').text(selectedChar.attack);
-    
+    $('#charname').text(selectedChar.name); 
+    $('#who').fadeOut(1000);
+    $('#whoEnem').fadeIn(1000);
 
 
 }
 function enemySelectDomStuff() {
     // hide all other cards
     selectedCard.addClass("opponent").removeClass("enemy");
+
     $('.enemy').slideUp(1000);
+    $('#whoEnem').fadeOut(1000);
     // center enemy card
     // done via bootstrap i think
     // create attack button that executes attack function on click
-    selectedCard.append("<button id='attack'>Negotiate</button>");
+    selectedCard.append("<button class='btn btn-outline-dark' id='attack'>Negotiate</button>");
     $('#attack').click(function() {
         attack();
     });
@@ -127,7 +130,7 @@ function attack() {
     selectedChar.hp = selectedChar.hp - selectedEnem.counterAttack;
    
     // user atk increases
-    selectedChar.attack = Math.floor(selectedChar.attack * 2);
+    selectedChar.attack = Math.floor(selectedChar.attack * 1.7);
 
     // detect if enemy hp = 0, if so execute enemyDefeat function
 
@@ -149,6 +152,7 @@ function enemyDefeat() {
     selectedCard.fadeOut(2000);
     selectedCard.parent().fadeOut(2000);
     // return to enemy select screen
+    $('whoEnem').fadeIn(1000);
     $('.enemy').fadeIn(3000);
     // detect if enemies defeated = 5, if so reveal playerVictory elements and hide all else
     if (enemies === 0) {

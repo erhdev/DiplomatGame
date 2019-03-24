@@ -16,7 +16,20 @@
 </head>
 
 <body>
+  
+  <div id="intro" class="cbk">
+    
+    <h6>The world is recovering from a devastating war.</h6>
+    <h6>You, your country, and your people lost.</h6>
+    <h6>At the peace conference, your nation will be torn apart and consumed by the victors.</h6>
+    <h6>Unless, at the conference, you bargain better, and with higher stakes, than you have ever before.</h6>
+    <h3>You have one option:</h3>
+    <button class="btn btn-dark" id="begin">Negotiate</button>
+  </div>
+</div>
   <div class="gameScreen">
+    <h1 id = "who" class="cbk">Who are you?</h1>
+    <h1 class="cbk" id="whoEnem"> Who is your target?</h1>
     <div class="row justify-content-center">
 
       <div class="col-3">
@@ -29,7 +42,7 @@
             <h6 class="atk"></h6>
             <h6 class="catk"></h6>
           </div>
-          <button class="char" id="00-char">Select</button>
+          <button class="char btn btn-outline-dark" id="00-char">Select</button>
         </div>
       </div>
       <div class="col-3">
@@ -42,7 +55,7 @@
             <h6 class="atk"></h6>
             <h6 class="catk"></h6>
           </div>
-          <button class="char" id="01-char">Select</button>
+          <button class="char btn btn-outline-dark" id="01-char">Select</button>
         </div>
       </div>
       <div class="col-3">
@@ -55,7 +68,7 @@
             <h6 class="atk"></h6>
             <h6 class="catk"></h6>
           </div>
-          <button class="char" id="02-char">Select</button>
+          <button class="char btn btn-outline-dark" id="02-char">Select</button>
         </div>
       </div>
       <div class="col-3">
@@ -68,32 +81,41 @@
             <h6 class="atk"></h6>
             <h6 class="catk"></h6>
           </div>
-          <button class="char" id="03-char">Select</button>
+          <button class="char btn btn-outline-dark" id="03-char">Select</button>
         </div>
       </div>
     </div>
-    <div class="row rowThird" id="charDisplay">
-      <div class="col-6"><img id="charDisplayImg" src=""></div>
-      <div class="col-6" id="charStats">
-
-        <p>Tenacity: <span id="charDisplayHP"></span></p>
-        <p>Persuasion: <span id="charDisplayATK"></span></p>
-
+    <div class="row justify-content-center" id="charDisplayHolder">
+    <div class="card mb-3" id="charDisplay">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+              <img id="charDisplayImg" src="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 id="charname"></h5>
+              <h1>Tenacity: <span id="charDisplayHP"></span></h1>
+              <h1>Persuasion: <span id="charDisplayATK"></span></h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    </div>
+  
   <div id="playerVictory">
     <div class="row rowThird"></div>
     <h2 id="success">You are victorious!</h2>
     <p>Your country will be spared and will exist alongside the large powers.</p>
     <p>You will be hailed as a hero by your countrymen.</p>
-    <button id="playAgain">Play Again</button>
+    <h6>Art Credits: Mark Luke</h6>
+    <button class="btn btn-outline-dark" id="playAgain">Play Again</button>
   </div>
   <div id="playerDefeat">
     <div class="row rowThird"></div>
     <h2 id="failure">You have failed.</h2>
     <p>Your country will be divided among the large powers, and you will be cursed as a traitor by your fellows.</p>
-    <button id="tryAgain">Try Again</button>
+    <button class="btn btn-outline-dark" id="tryAgain">Try Again</button>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -1,5 +1,20 @@
 body {
     background-image: url("../Media/Images/backgroundMap\ \(2\).jpg");
+    text-align: center;
+}
+#whoEnem {
+    display: none;
+}
+.cbk {
+    background-color: burlywood;
+    border: 2px solid;
+    border-color: brown;
+}
+#intro {
+    justify-content: center;
+}
+.gameScreen{
+    display: none;
 }
 .card {
     background-image: url('../Media/Images/cardBackground.jpg');
@@ -18,8 +33,16 @@ h5{
     border-bottom: 1px solid;
     border-bottom-color: rgb(24, 23, 23);
 }
+#charDisplayHolder {
+    
+    align-content: center;
+}
 #charDisplay {
     display: none;
+    width: 66%;
+}
+#charDisplayImg {
+    width: 100%;
 }
 #charStats {
     height: inherit;
